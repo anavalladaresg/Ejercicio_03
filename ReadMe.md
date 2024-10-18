@@ -67,3 +67,18 @@ http://localhost:8080
 ```bash
 http://localhost:9080
 ```
+
+## 7. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página.
+
+Modificamos el archivo `index.html` en el directorio `htdocs` del host con el mensaje "Hola Mundo 2". Al acceder a `localhost:8080` y `localhost:9080`, comprobamos que ambos servidores muestran la página actualizada.
+
+**Comandos utilizados:**
+```bash
+echo "Hola Mundo 2" > index.html
+```
+```bash
+http://localhost:8080
+```
+```bash
+http://localhost:9080
+```
