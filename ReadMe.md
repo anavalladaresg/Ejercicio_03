@@ -45,3 +45,25 @@ echo "Hola Mundo" > ~/mi-web:/usr/local/apache2/htdocs httpd
 ```bash
 http://localhost:8080
 ```
+
+## 5. Creamos otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
+
+Creamos un segundo contenedor `dam_web2` con la imagen `httpd:2.4`, mapeando el puerto `9080` del host y montando el directorio `htdocs`.
+
+
+**Comandos utilizados:**
+```bash
+docker run -d --name dam_web2 -p 9080:80 -v ~/mi-web:/usr/local/apache2/htdocs httpd
+```
+
+## 6. Comprobamoos que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador: http://localhost:9080 - http://localhost:8000
+
+Al acceder a las direcciones `localhost:8080` y `localhost:9080` desde el navegador, comprobamos que ambos servidores muestran la misma página "Hola Mundo".
+
+**Comandos utilizados:**
+```bash
+http://localhost:8080
+```
+```bash
+http://localhost:9080
+```
